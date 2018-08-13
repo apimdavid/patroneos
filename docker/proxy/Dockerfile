@@ -14,7 +14,8 @@ COPY docker/proxy/start.sh /start.sh
 
 # HAProxy
 COPY docker/proxy/haproxy/haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
-COPY docker/proxy/haproxy/ssl.pem /usr/local/etc/haproxy/ssl.pem
+# COPY docker/proxy/haproxy/ssl.pem /usr/local/etc/haproxy/ssl.pem
+COPY docker/proxy/haproxy/ore.pem /usr/local/etc/haproxy/ore.pem
 
 # patroneos
 COPY --from=builder /repo/patroneosd /usr/bin/patroneosd

@@ -4,8 +4,8 @@
     "configListenPort": "9000",
 
     "nodeosProtocol": "http",
-    "nodeosUrl": "localhost",
-    "nodeosPort": "8888",
+    "nodeosUrl": "",
+    "nodeosPort": "",
 
     "contractBlackList": {
         "currency": true

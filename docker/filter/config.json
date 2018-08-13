@@ -4,17 +4,19 @@
     "configListenPort": "9001",
 
     "nodeosProtocol": "http",
-    "nodeosUrl": "localhost",
-    "nodeosPort": "8888",
+    "nodeosUrl": "XXXSET_ME_TO_RFC1918_OF_NODEOS_HTTPXXX",
+    "nodeosPort": "8684",
 
     "contractBlackList": {
         "bad": true
     },
 
     "maxSignatures": 10,
-    "maxTransactionSize": 500000,
-    "maxTransactions": 1,
-    "filterEndpoints": ["http://localhost:8081"],
+    "maxTransactionSize": 1000000,
+    "maxTransactions": 10,
+
+    "logEndpoints": ["http://localhost:8080"],
+    "filterEndpoints": [],
 
     "logFileLocation": "./fail2ban.log",
     
