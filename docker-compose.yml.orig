@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+    proxy:
+        build:
+            context: .
+            dockerfile: docker/proxy/Dockerfile
+        ports:
+            - "443:443"
+            - "8080:8080"
+            - "9999:9999"
+        privileged: true
+        network_mode: "host"
+    filter:
+        build:
+            context: .
+            dockerfile: docker/filter/Dockerfile
+        ports:
+            - "8081:8081"
+        network_mode: "host"
+    nodeos:
+        image: eosio/eos
+        command: /opt/eosio/bin/nodeosd.sh --data-dir /opt/eosio/bin/data-dir --p2p-peer-address ore-staging.openrights.exchange:9876
+        ports:
+            - "8888:8888"
+            - "9876:9876"
+        expose:
+            - "8888"        
+
