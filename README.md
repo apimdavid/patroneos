@@ -3,8 +3,29 @@
 ## Notes for API.market/AIKON
 This forked repo contains a configuration appropriate for use with API.market.
 
-Run docker-compose build; docker-compose up
-And then obtain the current patroneos filter-mode configuration using curl http://localhost:8081/patroneos/config >/tmp/anyfile, then edit that file to name the correct nodeos host (local network IP) and http port, and POST it to patroneos using curl http://localhost:8081/patroneos/config -d @/tmp/anyfile.
+Run
+
+First, you will need to supply the correct SSL certificate at docker/proxy/haproxy/ore.pem.
+
+Then:
+
+```
+docker-compose build; docker-compose up
+```
+
+And then obtain the current patroneos filter-mode configuration using 
+
+```
+curl http://localhost:8081/patroneos/config >/tmp/anyfile
+```
+then edit that file to name the correct nodeos host (local network IP) and http port, and POST it to patroneos using
+
+```
+curl http://localhost:8081/patroneos/config -d @/tmp/anyfile
+```
+.  This live-updates the patroneos configuration and must be repeated every time docker-compose up is run again, unless you prefer to make the change prior to building a new static docker image.
+
+
 
 Patroneos provides a layer of protection for EOSIO nodes designed to protect against some of the basic Denial of Service attack vectors. It runs in a simple configuration and a more advanced configuration.
 
