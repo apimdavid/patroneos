@@ -8,6 +8,9 @@ main
 *.so
 *.dylib
 
+# Certs and chains
+*.pem
+
 # Test binary, build with `go test -c`
 *.test
 
