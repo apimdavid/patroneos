@@ -20,7 +20,7 @@ services:
         network_mode: "host"
         #    nodeos:
         # image: eosio/eos
-        # command: /opt/eosio/bin/nodeosd.sh -e --data-dir /opt/eosio/bin/data-dir --p2p-peer-address ore-staging.openrights.exchange:9876
+        # command: /opt/eosio/bin/nodeosd.sh -e --data-dir /opt/eosio/bin/data-dir --p2p-peer-address ore-staging.openrights.exchange:9876 --http-alias=localhost:8888
         # ports:
         #     - "8888:8888"
         #     - "9876:9876"
